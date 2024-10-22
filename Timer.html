@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: aqua;
+    }
+    div{
+        height: 30vh; 
+        width: 35vw;
+        border: 2px solid black;
+        margin: 15% 0 0 33% ;
+        text-align: center;
+        background-color: azure;
+    }
+    button{
+        margin-top:4% ; 
+        border-radius: 20px;
+        height: 6vh;
+        width: 6.5vw; 
+        font-size: 3.5vh;
+    }
+    #btn1{
+        background-color: chartreuse;
+    }
+    #btn2{
+        background-color: rgb(239, 79, 191);
+    }
+    h3{
+        animation: hdd 0.25s linear 0s infinite;
+    }
+    h2{
+        color: blue;
+    }
+    @keyframes hdd{
+        from{color: red;}
+        to{color: rgb(80, 237, 18)}
+    }
+
+</style>
+
+<body>
+    <div>
+        <h3>Click the Button to Display Timer</h3>
+        <h2 id="tm"></h2>
+        <button id="btn1">Start</button>
+        <button id="btn2">Stop</button>
+    </div>
+
+<script>
+    let btn1 = document.querySelector("#btn1");
+    let btn2 = document.querySelector("#btn2");
+    let tm = document.querySelector("#tm");
+    let tmref, num = 0;
+    btn1.addEventListener("click", () => {
+        tm.innerText = "Wait it's Loading.........."
+        tmref = setInterval( () => {
+            tm.innerText = num;
+            num++;
+        }, 1000)
+    })
+    btn2.addEventListener("click", () => {
+        clearInterval(tmref);
+    })
+    
+    
+</script>
+</body>
+</html>
